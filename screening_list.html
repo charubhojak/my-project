@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screening Tests</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="screening_list.css">
+</head>
+<body class="light-theme">
+    <div class="container">
+        <div class="theme-toggle">
+            <button id="themeToggleButton">Toggle Theme</button>
+        </div>
+        <h1>Choose a Screening Test</h1>
+
+        <div class="screening-grid">
+            <div class="screening-card" id="phq9-card">
+                <h2>PHQ-9 (Patient Health Questionnaire-9)</h2>
+                <p>The PHQ-9 is a nine-item instrument given to patients in a primary care setting to screen for depression.</p>
+                <button onclick="takeTest('phq9')">Take Test</button>
+            </div>
+
+            <div class="screening-card" id="gad7-card">
+                <h2>GAD-7 (Generalized Anxiety Disorder 7-item)</h2>
+                <p>The GAD-7 is a self-report questionnaire used for screening and severity measuring of generalized anxiety disorder.</p>
+                <button onclick="takeTest('gad7')">Take Test</button>
+            </div>
+
+            <div class="screening-card" id="ghq-card">
+                <h2>GHQ (General Health Questionnaire)</h2>
+                <p>The GHQ is a widely used screening tool to detect non-psychotic psychiatric disorder in primary care settings.</p>
+                <button onclick="takeTest('ghq')">Take Test</button>
+            </div>
+        </div>
+
+        <div class="results-section" id="resultsSection" style="display:none;">
+            <h2>Your Screening Results</h2>
+            <div id="testResults">
+                <!-- Results will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mock Data for Questionnaires (Answers are just example scores)
+        const mockPHQ9 = [
+            { question: "Little interest or pleasure in doing things?", score: 2 },
+            { question: "Feeling down, depressed, or hopeless?", score: 3 },
+            { question: "Trouble falling or staying asleep, or sleeping too much?", score: 1 },
+            { question: "Feeling tired or having little energy?", score: 2 },
+            { question: "Poor appetite or overeating?", score: 0 },
+            { question: "Feeling bad about yourself - or that you are a failure or have let yourself or your family down?", score: 2 },
+            { question: "Trouble concentrating on things, such as reading the newspaper or watching television?", score: 1 },
+            { question: "Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual?", score: 0 },
+            { question: "Thoughts that you would be better off dead, or of hurting yourself in some way?", score: 1 }
+        ];
+
+        const mockGAD7 = [
+            { question: "Feeling nervous, anxious, or on edge?", score: 2 },
+            { question: "Not being able to stop or control worrying?", score: 3 },
+            { question: "Worrying too much about different things?", score: 1 },
+            { question: "Trouble relaxing?", score: 2 },
+            { question: "Being so restless that it's hard to sit still?", score: 0 },
+            { question: "Becoming easily annoyed or irritable?", score: 2 },
+            { question: "Feeling afraid as if something awful might happen?", score: 1 }
+        ];
+
+        const mockGHQ = [
+            { question: "Been able to concentrate on whatever you're doing?", score: 0 },
+            { question: "Lost much sleep over worry?", score: 3 },
+            { question: "Felt constantly under strain?", score: 2 },
+            { question: "Been able to overcome your difficulties?", score: 1 },
+            { question: "Been feeling unhappy or depressed?", score: 3 },
+            { question: "Been losing confidence in yourself?", score: 2 },
+            { question: "Been thinking of yourself as a worthless person?", score: 2 },
+            { question: "Been able to enjoy your normal day-to-day activities?", score: 0 },
+            { question: "Been able to face up to your problems?", score: 1 },
+            { question: "Been feeling reasonably happy, all things considered?", score: 0 }
+        ];
+
+        function takeTest(testType) {
+            let questionnaire;
+            let totalScore = 0;
+            let resultsHtml = '';
+            let riskLevel = '';
+            let riskClass = '';
+
+            switch (testType) {
+                case 'phq9':
+                    questionnaire = mockPHQ9;
+                    questionnaire.forEach(q => totalScore += q.score);
+                    resultsHtml += `<h3>PHQ-9 Results</h3><p>Total Score: ${totalScore}</p>`;
+                    if (totalScore >= 20) { riskLevel = "Severe Depression"; riskClass = "risk-severe"; }
+                    else if (totalScore >= 15) { riskLevel = "Moderately Severe Depression"; riskClass = "risk-high"; }
+                    else if (totalScore >= 10) { riskLevel = "Moderate Depression"; riskClass = "risk-moderate"; }
+                    else if (totalScore >= 5) { riskLevel = "Mild Depression"; riskClass = "risk-low"; }
+                    else { riskLevel = "Minimal Depression"; riskClass = "risk-low"; }
+                    break;
+                case 'gad7':
+                    questionnaire = mockGAD7;
+                    questionnaire.forEach(q => totalScore += q.score);
+                    resultsHtml += `<h3>GAD-7 Results</h3><p>Total Score: ${totalScore}</p>`;
+                    if (totalScore >= 15) { riskLevel = "Severe Anxiety"; riskClass = "risk-severe"; }
+                    else if (totalScore >= 10) { riskLevel = "Moderate Anxiety"; riskClass = "risk-high"; }
+                    else if (totalScore >= 5) { riskLevel = "Mild Anxiety"; riskClass = "risk-moderate"; }
+                    else { riskLevel = "Minimal Anxiety"; riskClass = "risk-low"; }
+                    break;
+                case 'ghq':
+                    questionnaire = mockGHQ;
+                    questionnaire.forEach(q => totalScore += q.score); // GHQ scoring can be complex, this is a simplified sum.
+                    resultsHtml += `<h3>GHQ Results</h3><p>Total Score: ${totalScore}</p>`;
+                    // GHQ has various scoring methods (e.g., GHQ-12, GHQ-28). This is a very simplified risk.
+                    if (totalScore >= 15) { riskLevel = "High Distress"; riskClass = "risk-high"; }
+                    else if (totalScore >= 10) { riskLevel = "Moderate Distress"; riskClass = "risk-moderate"; }
+                    else if (totalScore >= 5) { riskLevel = "Mild Distress"; riskClass = "risk-low"; }
+                    else { riskLevel = "Low Distress"; riskClass = "risk-low"; }
+                    break;
+                default:
+                    return;
+            }
+
+            resultsHtml += `<p>Risk Level: <span class="${riskClass}">${riskLevel}</span></p>`;
+
+            document.getElementById('testResults').innerHTML = `<div class="test-result">${resultsHtml}</div>`;
+            document.getElementById('resultsSection').style.display = 'block';
+
+            // Scroll to results
+            document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Theme Toggle Logic
+        const themeToggleButton = document.getElementById('themeToggleButton');
+        const body = document.body;
+
+        themeToggleButton.addEventListener('click', () => {
+            if (body.classList.contains('light-theme')) {
+                body.classList.remove('light-theme');
+                body.classList.add('dark-theme');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.remove('dark-theme');
+                body.classList.add('light-theme');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Apply saved theme on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            body.classList.add(savedTheme + '-theme');
+        });
+    </script>
+</body>
+</html>
