@@ -7,81 +7,125 @@
     <link rel="stylesheet" href="screening.css">
 </head>
 <body>
-    <div class="container">
-    <h1>Mental Health Screening Forms</h1>
-    <p class="intro">Answer the following questions honestly for accurate screening results.</p>
+    <header class="header">
+        <h1>Mental Health Screening Form</h1>
+        <p>Answer honestly to assess your mental health</p>
+    </header>
 
-    <!-- PHQ-9 Section -->
-    <section id="phq9" class="test-section">
-      <h2>PHQ-9 (Depression)</h2>
-      <form>
-        <div class="question">
-          <p>1. Little interest or pleasure in doing things</p>
-          <label><input type="radio" name="phq9_q1"> Not at all</label>
-          <label><input type="radio" name="phq9_q1"> Several days</label>
-          <label><input type="radio" name="phq9_q1"> More than half the days</label>
-          <label><input type="radio" name="phq9_q1"> Nearly every day</label>
-        </div>
+    <main class="container">
+        <form class="screening-form">
 
-        <div class="question">
-          <p>2. Feeling down, depressed, or hopeless</p>
-          <label><input type="radio" name="phq9_q2"> Not at all</label>
-          <label><input type="radio" name="phq9_q2"> Several days</label>
-          <label><input type="radio" name="phq9_q2"> More than half the days</label>
-          <label><input type="radio" name="phq9_q2"> Nearly every day</label>
-        </div>
+            <!-- PHQ-9 Section -->
+            <div class="section">
+                <h2>PHQ-9 (Depression)</h2>
+                <div class="form-group">
+                    <label>1. Little interest or pleasure in doing things?</label>
+                    <select required>
+                        <option value="">Select</option>
+                        <option value="0">Not at all</option>
+                        <option value="1">Several days</option>
+                        <option value="2">More than half the days</option>
+                        <option value="3">Nearly every day</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>2. Feeling down, depressed, or hopeless?</label>
+                    <select required>
+                        <option value="">Select</option>
+                        <option value="0">Not at all</option>
+                        <option value="1">Several days</option>
+                        <option value="2">More than half the days</option>
+                        <option value="3">Nearly every day</option>
+                    </select>
+                </div>
 
-        <button type="submit" class="submit-btn">Submit PHQ-9</button>
-      </form>
-    </section>
+                <div class="form-group">
+                    <label>3. Trouble falling or staying asleep, or sleeping too much?</label>
+                    <select required>
+                        <option value="">Select</option>
+                        <option value="0">Not at all</option>
+                        <option value="1">Several days</option>
+                        <option value="2">More than half the days</option>
+                        <option value="3">Nearly every day</option>
+                    </select>
+                </div>
+            </div>
 
-    <!-- GAD-7 Section -->
-    <section id="gad7" class="test-section">
-      <h2>GAD-7 (Anxiety)</h2>
-      <form>
-        <div class="question">
-          <p>1. Feeling nervous, anxious or on edge</p>
-          <label><input type="radio" name="gad7_q1"> Not at all</label>
-          <label><input type="radio" name="gad7_q1"> Several days</label>
-          <label><input type="radio" name="gad7_q1"> More than half the days</label>
-          <label><input type="radio" name="gad7_q1"> Nearly every day</label>
-        </div>
+            <!-- GAD-7 Section -->
+            <div class="section">
+                <h2>GAD-7 (Anxiety)</h2>
+                <div class="form-group">
+                    <label>1. Feeling nervous, anxious, or on edge?</label>
+                    <select required>
+                        <option value="">Select</option>
+                        <option value="0">Not at all</option>
+                        <option value="1">Several days</option>
+                        <option value="2">More than half the days</option>
+                        <option value="3">Nearly every day</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>2. Not being able to stop or control worrying?</label>
+                    <select required>
+                        <option value="">Select</option>
+                        <option value="0">Not at all</option>
+                        <option value="1">Several days</option>
+                        <option value="2">More than half the days</option>
+                        <option value="3">Nearly every day</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>3. Trouble relaxing?</label>
+                    <select required>
+                        <option value="">Select</option>
+                        <option value="0">Not at all</option>
+                        <option value="1">Several days</option>
+                        <option value="2">More than half the days</option>
+                        <option value="3">Nearly every day</option>
+                    </select>
+                </div>
+            </div>
 
-        <div class="question">
-          <p>2. Not being able to stop or control worrying</p>
-          <label><input type="radio" name="gad7_q2"> Not at all</label>
-          <label><input type="radio" name="gad7_q2"> Several days</label>
-          <label><input type="radio" name="gad7_q2"> More than half the days</label>
-          <label><input type="radio" name="gad7_q2"> Nearly every day</label>
-        </div>
+            <!-- GHQ Section -->
+            <div class="section">
+                <h2>GHQ (General Health)</h2>
+                <div class="form-group">
+                    <label>1. Able to concentrate on whatever you’re doing?</label>
+                    <select required>
+                        <option value="">Select</option>
+                        <option value="0">Better than usual</option>
+                        <option value="1">Same as usual</option>
+                        <option value="2">Worse than usual</option>
+                        <option value="3">Much worse than usual</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>2. Feeling constantly under strain?</label>
+                    <select required>
+                      <option value="">Select</option>
+                        <option value="0">Not at all</option>
+                        <option value="1">Sometimes</option>
+                        <option value="2">Often</option>
+                        <option value="3">Always</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>3. Losing confidence in yourself?</label>
+                    <select required>
+                        <option value="">Select</option>
+                        <option value="0">Not at all</option>
+                        <option value="1">Sometimes</option>
+                        <option value="2">Often</option>
+                        <option value="3">Always</option>
+                    </select>
+                </div>
+            </div>
 
-        <button type="submit" class="submit-btn">Submit GAD-7</button>
-      </form>
-    </section>
-
-    <!-- GHQ Section -->
-    <section id="ghq" class="test-section">
-      <h2>GHQ (General Health)</h2>
-      <form>
-        <div class="question">
-          <p>1. Been able to concentrate on what you're doing</p>
-          <label><input type="radio" name="ghq_q1"> Not at all</label>
-          <label><input type="radio" name="ghq_q1"> Several days</label>
-          <label><input type="radio" name="ghq_q1"> More than half the days</label>
-          <label><input type="radio" name="ghq_q1"> Nearly every day</label>
-        </div>
-
-        <div class="question">
-          <p>2. Felt unhappy or depressed</p>
-          <label><input type="radio" name="ghq_q2"> Not at all</label>
-          <label><input type="radio" name="ghq_q2"> Several days</label>
-          <label><input type="radio" name="ghq_q2"> More than half the days</label>
-          <label><input type="radio" name="ghq_q2"> Nearly every day</label>
-        </div>
-
-        <button type="submit" class="submit-btn">Submit GHQ</button>
-      </form>
-    </section>
-  </div>
+            <button type="submit" class="btn-submit">Submit</button>
+        </form>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2025 Mental Health Project</p>
+    </footer>
 </body>
 </html>

@@ -3,124 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mental Health Screening - Result</title>
+  <title>Document</title>
   <link rel="stylesheet" href="screening.css">
-  <style>
-    /* Result card styles */
-    .result-card {
-      padding: 25px;
-      border-radius: 12px;
-      margin: 20px 0;
-      text-align: center;
-      font-weight: bold;
-      font-size: 1.2em;
-      color: white;
-      opacity: 0;
-      transform: scale(0.95);
-      animation: fadeScaleIn 0.8s forwards;
-    }
-
-    .result-card:nth-child(1) { animation-delay: 0.2s; }
-    .result-card:nth-child(2) { animation-delay: 0.4s; }
-    .result-card:nth-child(3) { animation-delay: 0.6s; }
-
-    .minimal { background: #2ecc71; }    /* Green */
-    .mild { background: #f1c40f; color: #333; } /* Yellow */
-    .moderate { background: #e67e22; }  /* Orange */
-    .severe { background: #e74c3c; }    /* Red */
-
-    .score-box {
-      font-size: 1.5em;
-      margin: 10px 0;
-      font-weight: bold;
-    }
-
-    .back-btn {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 12px 22px;
-      background: #3498db;
-      color: #fff;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.3s, transform 0.2s;
-    }
-
-    .back-btn:hover {
-      background: #2980b9;
-      transform: translateY(-2px);
-    }
-
-    /* Animation keyframes */
-    @keyframes fadeScaleIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    /* ---------------- RESPONSIVE DESIGN ---------------- */
-    @media (max-width: 768px) {
-      .result-card {
-        padding: 18px;
-        font-size: 1.1em;
-      }
-
-      .score-box {
-        font-size: 1.3em;
-      }
-
-      .back-btn {
-        width: 100%;
-        text-align: center;
-      }
-    }
-
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 1.5em;
-      }
-
-      .intro {
-        font-size: 0.95em;
-      }
-
-      .result-card {
-        font-size: 1em;
-        padding: 15px;
-      }
-
-      .score-box {
-        font-size: 1.2em;
-      }
-    }
-  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Screening Result</h1>
-    <p class="intro">Here is your screening outcome based on your responses.</p>
+  <header class="header">
+        <h1>PHQ-9 Result</h1>
+        <p>Your mental health assessment summary</p>
+    </header>
 
-    <!-- PHQ-9 Result -->
-    <div class="result-card moderate">
-      <h2>PHQ-9 (Depression)</h2>
-      <p class="score-box">Score: 14 / 27</p>
-      <p>Risk Level: <strong>Moderate Depression</strong></p>
-    </div>
+    <main class="container">
+        <div class="result-card">
+            <h2>Total Score</h2>
+            <div class="score">14</div>
 
-    <!-- GAD-7 Result -->
-    <div class="result-card severe">
-      <h2>GAD-7 (Anxiety)</h2>
-      <p class="score-box">Score: 18 / 21</p>
-      <p>Risk Level: <strong>Severe Anxiety</strong></p>
-    </div>
+            <p>Based on your responses, your risk level is:</p>
+            <div class="risk-level moderate">Moderate Depression</div>
 
-    <!-- GHQ Result -->
-    <div class="result-card mild">
-      <h2>GHQ (General Health)</h2>
-      <p class="score-box">Score: 6 / 12</p>
-      <p>Risk Level: <strong>Mild Distress</strong></p>
-    </div>
+            <p class="advice">
+                It's recommended to consult a mental health professional for guidance and support.
+            </p>
 
-    <a href="screening_list.html" class="back-btn">← Back to Screening</a>
-  </div>
+            <a href="screening_list.html" class="btn-back">Back to Screening List</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Mental Health Project</p>
+    </footer>
+
 </body>
 </html>

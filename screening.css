@@ -189,3 +189,176 @@ label:hover {
     font-size: 1em;
   }
 }
+
+
+
+
+
+/* Container */
+.container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* Result Card */
+.result-card {
+    background: #ffffff;
+    max-width: 500px;
+    width: 100%;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    animation: fadeIn 1s ease-in;
+}
+
+.result-card h2 {
+    font-size: 2rem;
+    color: #00796b;
+    margin-bottom: 20px;
+}
+
+.score {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #004d40;
+    margin-bottom: 20px;
+    animation: popIn 0.5s ease forwards;
+}
+
+.result-card p {
+  font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.risk-level {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 15px 20px;
+    border-radius: 12px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    display: inline-block;
+    animation: popIn 0.5s ease forwards;
+}
+
+/* Risk Level Colors */
+.risk-level.low { background-color: #4db6ac; }      /* Light teal */
+.risk-level.moderate { background-color: #00796b; } /* Teal */
+.risk-level.high { background-color: #004d40; }      /* Dark teal */
+
+.advice {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+/* Back Button */
+.btn-back {
+    display: inline-block;
+    background: #00796b;
+    color: #ffffff;
+    padding: 12px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-back:hover {
+    background: #004d40;
+    transform: translateY(-3px);
+}
+
+/* Animations */
+@keyframes popIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .result-card {
+        padding: 30px 20px;
+    }
+
+    .score {
+        font-size: 2.5rem;
+    }
+
+    .risk-level {
+        font-size: 1.3rem;
+        padding: 12px 18px;
+    }
+
+    .btn-back {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Cards (already used for screening list) */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 30px 20px;
+    width: 250px;
+    text-decoration: none;
+    color: #00796b;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.card h2 {
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+    }
+}
+
