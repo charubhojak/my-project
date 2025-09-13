@@ -8,124 +8,141 @@
 </head>
 <body>
     <header class="header">
-        <h1>Mental Health Screening Form</h1>
-        <p>Answer honestly to assess your mental health</p>
-    </header>
+    <h1>Screening Questionnaire</h1>
+    <p>Select a test to begin answering</p>
+  </header>
 
-    <main class="container">
-        <form class="screening-form">
+  <main class="container">
+    <!-- Test Selection Buttons -->
+    <div class="test-buttons">
+      <button onclick="showForm('phq9')">PHQ-9</button>
+      <button onclick="showForm('gad7')">GAD-7</button>
+      <button onclick="showForm('ghq')">GHQ</button>
+    </div>
 
-            <!-- PHQ-9 Section -->
-            <div class="section">
-                <h2>PHQ-9 (Depression)</h2>
-                <div class="form-group">
-                    <label>1. Little interest or pleasure in doing things?</label>
-                    <select required>
-                        <option value="">Select</option>
-                        <option value="0">Not at all</option>
-                        <option value="1">Several days</option>
-                        <option value="2">More than half the days</option>
-                        <option value="3">Nearly every day</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>2. Feeling down, depressed, or hopeless?</label>
-                    <select required>
-                        <option value="">Select</option>
-                        <option value="0">Not at all</option>
-                        <option value="1">Several days</option>
-                        <option value="2">More than half the days</option>
-                        <option value="3">Nearly every day</option>
-                    </select>
-                </div>
+    <!-- PHQ-9 Form -->
+    <form id="phq9" class="screening-form">
+      <h2>PHQ-9 (Depression Screening)</h2>
 
-                <div class="form-group">
-                    <label>3. Trouble falling or staying asleep, or sleeping too much?</label>
-                    <select required>
-                        <option value="">Select</option>
-                        <option value="0">Not at all</option>
-                        <option value="1">Several days</option>
-                        <option value="2">More than half the days</option>
-                        <option value="3">Nearly every day</option>
-                    </select>
-                </div>
-            </div>
+      <div class="question">
+        <label>1. Little interest or pleasure in doing things?</label>
+        <div class="options">
+          <label><input type="radio" name="phq9_q1"> Not at all</label>
+          <label><input type="radio" name="phq9_q1"> Several days</label>
+          <label><input type="radio" name="phq9_q1"> More than half the days</label>
+        </div>
+      </div>
 
-            <!-- GAD-7 Section -->
-            <div class="section">
-                <h2>GAD-7 (Anxiety)</h2>
-                <div class="form-group">
-                    <label>1. Feeling nervous, anxious, or on edge?</label>
-                    <select required>
-                        <option value="">Select</option>
-                        <option value="0">Not at all</option>
-                        <option value="1">Several days</option>
-                        <option value="2">More than half the days</option>
-                        <option value="3">Nearly every day</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>2. Not being able to stop or control worrying?</label>
-                    <select required>
-                        <option value="">Select</option>
-                        <option value="0">Not at all</option>
-                        <option value="1">Several days</option>
-                        <option value="2">More than half the days</option>
-                        <option value="3">Nearly every day</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>3. Trouble relaxing?</label>
-                    <select required>
-                        <option value="">Select</option>
-                        <option value="0">Not at all</option>
-                        <option value="1">Several days</option>
-                        <option value="2">More than half the days</option>
-                        <option value="3">Nearly every day</option>
-                    </select>
-                </div>
-            </div>
+      <div class="question">
+        <label>2. Feeling down, depressed, or hopeless?</label>
+        <div class="options">
+          <label><input type="radio" name="phq9_q2"> Not at all</label>
+          <label><input type="radio" name="phq9_q2"> Several days</label>
+          <label><input type="radio" name="phq9_q2"> Nearly every day</label>
+        </div>
+      </div>
 
-            <!-- GHQ Section -->
-            <div class="section">
-                <h2>GHQ (General Health)</h2>
-                <div class="form-group">
-                    <label>1. Able to concentrate on whatever you’re doing?</label>
-                    <select required>
-                        <option value="">Select</option>
-                        <option value="0">Better than usual</option>
-                        <option value="1">Same as usual</option>
-                        <option value="2">Worse than usual</option>
-                        <option value="3">Much worse than usual</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>2. Feeling constantly under strain?</label>
-                    <select required>
-                      <option value="">Select</option>
-                        <option value="0">Not at all</option>
-                        <option value="1">Sometimes</option>
-                        <option value="2">Often</option>
-                        <option value="3">Always</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>3. Losing confidence in yourself?</label>
-                    <select required>
-                        <option value="">Select</option>
-                        <option value="0">Not at all</option>
-                        <option value="1">Sometimes</option>
-                        <option value="2">Often</option>
-                        <option value="3">Always</option>
-                    </select>
-                </div>
-            </div>
+      <div class="question">
+        <label>3. Trouble falling or staying asleep?</label>
+        <div class="options">
+          <label><input type="radio" name="phq9_q3"> Not at all</label>
+          <label><input type="radio" name="phq9_q3"> Several days</label>
+          <label><input type="radio" name="phq9_q3"> More than half the days</label>
+        </div>
+      </div>
 
-            <button type="submit" class="btn-submit">Submit</button>
-        </form>
-    </main>
-    <footer class="footer">
-        <p>&copy; 2025 Mental Health Project</p>
-    </footer>
+      <button type="submit" class="btn-submit">Submit PHQ-9</button>
+    </form>
+
+    <!-- GAD-7 Form -->
+    <form id="gad7" class="screening-form">
+      <h2>GAD-7 (Anxiety Screening)</h2>
+
+      <div class="question">
+        <label>1. Feeling nervous, anxious, or on edge?</label>
+        <div class="options">
+          <label><input type="radio" name="gad7_q1"> Not at all</label>
+          <label><input type="radio" name="gad7_q1"> Several days</label>
+          <label><input type="radio" name="gad7_q1"> Nearly every day</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <label>2. Not being able to stop or control worrying?</label>
+        <div class="options">
+          <label><input type="radio" name="gad7_q2"> Not at all</label>
+          <label><input type="radio" name="gad7_q2"> Several days</label>
+          <label><input type="radio" name="gad7_q2"> More than half the days</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <label>3. Worrying too much about different things?</label>
+        <div class="options">
+          <label><input type="radio" name="gad7_q3"> Not at all</label>
+          <label><input type="radio" name="gad7_q3"> Several days</label>
+          <label><input type="radio" name="gad7_q3"> Nearly every day</label>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-submit">Submit GAD-7</button>
+    </form>
+
+    <!-- GHQ Form -->
+    <form id="ghq" class="screening-form">
+      <h2>GHQ (General Health Questionnaire)</h2>
+
+      <div class="question">
+        <label>1. Have you recently lost much sleep over worry?</label>
+        <div class="options">
+          <label><input type="radio" name="ghq_q1"> Not at all</label>
+          <label><input type="radio" name="ghq_q1"> A little</label>
+          <label><input type="radio" name="ghq_q1"> Much more than usual</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <label>2. Have you recently felt constantly under strain?</label>
+        <div class="options">
+          <label><input type="radio" name="ghq_q2"> Not at all</label>
+          <label><input type="radio" name="ghq_q2"> A little</label>
+          <label><input type="radio" name="ghq_q2"> Much more than usual</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <label>3. Have you recently felt you couldn’t overcome your difficulties?</label>
+        <div class="options">
+          <label><input type="radio" name="ghq_q3"> Not at all</label>
+          <label><input type="radio" name="ghq_q3"> A little</label>
+          <label><input type="radio" name="ghq_q3"> Much more than usual</label>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-submit">Submit GHQ</button>
+    </form>
+  </main>
+
+   
+
+  <!-- JavaScript -->
+  <script>
+    function showForm(testId) {
+      // Hide all forms
+      document.querySelectorAll(".screening-form").forEach(form => {
+        form.classList.remove("active");
+      });
+      // Show selected form
+      document.getElementById(testId).classList.add("active");
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+
+
+
+
+
+
 </body>
 </html>

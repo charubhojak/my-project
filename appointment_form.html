@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Appointment</title>
+  <link rel="stylesheet" href="screening.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Confidential Appointment Form</h1>
+    <p>Please provide your details to book a session</p>
+  </header>
+
+  <main class="container">
+    <form class="appointment-form" id="appointmentForm">
+      <!-- Name -->
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Enter your name">
+        <div class="error-message" id="nameError">Name is required</div>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email">
+        <div class="error-message" id="emailError">Enter a valid email</div>
+      </div>
+
+      <!-- Phone -->
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="Enter your phone number">
+        <div class="error-message" id="phoneError">Enter a valid phone number</div>
+      </div>
+
+      <!-- Counsellor -->
+      <div class="form-group">
+        <label for="counsellor">Select Counsellor</label>
+        <select id="counsellor">
+          <option value="">Choose a counsellor</option>
+          <option>Dr. Aisha Khan</option>
+          <option>Mr. Rohan Sharma</option>
+          <option>Ms. Neha Mehta</option>
+          <option>Dr. Arjun Verma</option>
+        </select>
+        <div class="error-message" id="counsellorError">Please select a counsellor</div>
+      </div>
+
+      <!-- Date -->
+      <div class="form-group">
+        <label for="date">Preferred Date</label>
+        <input type="date" id="date">
+        <div class="error-message" id="dateError">Please select a date</div>
+      </div>
+
+      <!-- Time -->
+      <div class="form-group">
+        <label for="time">Preferred Time</label>
+        <input type="time" id="time">
+        <div class="error-message" id="timeError">Please select a time</div>
+      </div>
+
+      <!-- Notes -->
+      <div class="form-group">
+        <label for="notes">Confidential Notes</label>
+        <textarea id="notes" rows="4" placeholder="Write any notes or concerns..."></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit">Book Appointment</button>
+      <div class="success-message" id="successMessage">✅ Appointment booked successfully!</div>
+    </form>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Mental Health Project</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const form = document.getElementById("appointmentForm");
+    const successMessage = document.getElementById("successMessage");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      let valid = true;
+
+      // Fields
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const counsellor = document.getElementById("counsellor").value.trim();
+      const date = document.getElementById("date").value.trim();
+      const time = document.getElementById("time").value.trim();
+
+      // Error divs
+      const errors = {
+        nameError: name === "",
+        emailError: !/^[^@]+@[^@]+\.[^@]+$/.test(email),
+        phoneError: phone.length < 10,
+        counsellorError: counsellor === "",
+        dateError: date === "",
+        timeError: time === ""
+      };
+
+      // Show/Hide error messages
+      for (const [id, condition] of Object.entries(errors)) {
+        const el = document.getElementById(id);
+        if (condition) {
+          el.style.display = "block";
+          valid = false;
+        } else {
+          el.style.display = "none";
+        }
+      }
+
+      // Success message
+      if (valid) {
+        successMessage.style.display = "block";
+        form.reset();
+        setTimeout(() => {
+          successMessage.style.display = "none";
+        }, 3000);
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+  
+
