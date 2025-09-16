@@ -1,44 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confidential Appointment Booking</title>
-    <link rel="stylesheet" href="screening.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appointment List</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header">
-        <h1>Book an Appointment</h1>
-        <p>Choose a counsellor and schedule a confidential session</p>
+
+  <div class="appointment-list-page">
+    <header class="appointment-list-header">
+      <h1>| Available Counsellors</h1>
+      <p class="appointment-list-intro">Choose from the list of counsellors and book your confidential appointment.</p>
     </header>
 
-    <main class="container">
-        <div class="card-container">
-            <a href="appointment_form.html" class="card">
-                <h2>Dr. Aisha Khan</h2>
-                <p>Available: Mon, Wed, Fri | 10:00 AM - 4:00 PM</p>
-            </a>
+    <section class="appointment-list-container">
+      <!-- Counsellor Card 1 -->
+      <div class="appointment-list-card">
+        <h3>Dr. Neha Sharma</h3>
+        <p><strong>Specialization:</strong> Anxiety, Stress Management</p>
+        <p><strong>Available:</strong> Mon - Wed, 10 AM - 2 PM</p>
+        <button class="appointment-list-btn">Book Appointment</button>
+      </div>
 
-            <a href="appointment_form.html" class="card">
-                <h2>Mr. Rohan Sharma</h2>
-                <p>Available: Tue, Thu | 11:00 AM - 5:00 PM</p>
-            </a>
+      <!-- Counsellor Card 2 -->
+      <div class="appointment-list-card">
+        <h3>Mr. Raj Singh</h3>
+        <p><strong>Specialization:</strong> Student Counselling</p>
+        <p><strong>Available:</strong> Thu - Fri, 1 PM - 5 PM</p>
+        <button class="appointment-list-btn">Book Appointment</button>
+      </div>
 
-            <a href="appointment_form.html" class="card">
-                <h2>Ms. Neha Mehta</h2>
-                <p>Available: Mon-Fri | 9:00 AM - 3:00 PM</p>
-            </a>
-
-            <a href="appointment_form.html" class="card">
-                <h2>Dr. Arjun Verma</h2>
-                <p>Available: Wed, Thu | 1:00 PM - 6:00 PM</p>
-            </a>
-        </div>
-    </main>
-
-    <footer class="footer">
-        <p>&copy; 2025 Mental Health Project</p>
-    </footer>
+      <!-- Counsellor Card 3 -->
+      <div class="appointment-list-card">
+        <h3>Ms. Aarti Verma</h3>
+        <p><strong>Specialization:</strong> Depression, Mindfulness</p>
+        <p><strong>Available:</strong> Sat - Sun, 9 AM - 12 PM</p>
+        <button class="appointment-list-btn">Book Appointment</button>
+      </div>
+    </section>
+  </div>
 
 </body>
 </html>
+
+

@@ -4,120 +4,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Manage Counsellors</title>
-  <link rel="stylesheet" href="screening.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>Manage Counsellors</header>
+  <div class="manage-counsellors-page">
+    <header class="manage-counsellors-header">
+      <h1>Manage Counsellors</h1>
+      <p class="manage-counsellors-intro">Add, update, and manage available counsellors for student support.</p>
+    </header>
 
-  <div class="container">
-    <div class="content-wrapper">
-      
-      <!-- Left: Table -->
-      <div class="table-container">
-        <h2>Current Counsellors</h2>
-        <table id="counsellorTable">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Specialization</th>
-              <th>Email</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Dr. Neha Sharma</td>
-              <td>Depression & Anxiety</td>
-              <td>neha@bit.edu</td>
-              <td>
-                <button class="btn btn-edit" onclick="editRow(this)">Edit</button>
-                <button class="btn btn-delete" onclick="deleteRow(this)">Delete</button>
-              </td>
-            </tr>
-            <tr>
-              <td>Mr. Raj Mehta</td>
-              <td>Stress Management</td>
-              <td>raj@bit.edu</td>
-              <td>
-                <button class="btn btn-edit" onclick="editRow(this)">Edit</button>
-                <button class="btn btn-delete" onclick="deleteRow(this)">Delete</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <!-- Add Counsellor Form -->
+    <section class="manage-counsellors-form-section">
+      <h2>Add New Counsellor</h2>
+      <form class="manage-counsellors-form">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="text" placeholder="Specialization" required>
+        <button type="submit">Add Counsellor</button>
+      </form>
+    </section>
 
-      <!-- Right: Form -->
-      <div class="form-container">
-        <h2>Add / Update Counsellor</h2>
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name">
-        </div>
-        <div class="form-group">
-          <label for="specialization">Specialization</label>
-          <input type="text" id="specialization">
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email">
-        </div>
-        <button class="btn btn-add" onclick="addCounsellor()">Save Counsellor</button>
-      </div>
-
-    </div>
-  </div>
-
-  <script>
-    let editIndex = null;
-
-    function addCounsellor() {
-      const name = document.getElementById('name').value;
-      const specialization = document.getElementById('specialization').value;
-      const email = document.getElementById('email').value;
-      const table = document.getElementById('counsellorTable').getElementsByTagName('tbody')[0];
-
-      if (name && specialization && email) {
-        if (editIndex === null) {
-          let row = table.insertRow();
-          row.innerHTML = `
-            <td>${name}</td>
-            <td>${specialization}</td>
-            <td>${email}</td>
+    <!-- Counsellors List -->
+    <section class="manage-counsellors-list-section">
+      <h2>Current Counsellors</h2>
+      <table class="manage-counsellors-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Specialization</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dr. Aditi Sharma</td>
+            <td>aditi@example.com</td>
+            <td>Clinical Psychologist</td>
             <td>
-              <button class="btn btn-edit" onclick="editRow(this)">Edit</button>
-              <button class="btn btn-delete" onclick="deleteRow(this)">Delete</button>
+              <button class="manage-counsellors-btn edit">Edit</button>
+              <button class="manage-counsellors-btn delete">Delete</button>
             </td>
-          `;
-        } else {
-          table.rows[editIndex].cells[0].innerText = name;
-          table.rows[editIndex].cells[1].innerText = specialization;
-          table.rows[editIndex].cells[2].innerText = email;
-          editIndex = null;
-        }
-
-        document.getElementById('name').value = "";
-        document.getElementById('specialization').value = "";
-        document.getElementById('email').value = "";
-      } else {
-        alert("Please fill all fields.");
-      }
-    }
-
-    function editRow(btn) {
-      const row = btn.parentNode.parentNode;
-      editIndex = row.rowIndex - 1;
-      document.getElementById('name').value = row.cells[0].innerText;
-      document.getElementById('specialization').value = row.cells[1].innerText;
-      document.getElementById('email').value = row.cells[2].innerText;
-    }
-
-    function deleteRow(btn) {
-      const row = btn.parentNode.parentNode;
-      row.parentNode.removeChild(row);
-    }
-  </script>
+          </tr>
+          <tr>
+            <td>Mr. Raj Malhotra</td>
+            <td>raj@example.com</td>
+            <td>Therapist</td>
+            <td>
+              <button class="manage-counsellors-btn edit">Edit</button>
+              <button class="manage-counsellors-btn delete">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
 
 </body>
 </html>

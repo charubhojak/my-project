@@ -3,71 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Dashboard - Mental Health Project</title>
-  <link rel="stylesheet" href="screening.css">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Admin Dashboard</h1>
-    <p>Analytics & Insights – Mental Health Project</p>
-  </header>
 
-  <!-- Quick Stats -->
-  <section class="dashboard">
-    <div class="card">
-      <h3>High Anxiety %</h3>
-      <p>42%</p>
-    </div>
-    <div class="card">
-      <h3>Bookings</h3>
-      <p>128</p>
-    </div>
-    <div class="card">
-      <h3>Active Forum Posts</h3>
-      <p>56</p>
-    </div>
-    <div class="card">
-      <h3>Anonymous Posts</h3>
-      <p>33</p>
-    </div>
-  </section>
+  <div class="admin-dashboard-page">
+    <header class="admin-dashboard-header">
+      <h1>Admin Dashboard</h1>
+      <p class="admin-dashboard-intro">Monitor trends, bookings, and community activity anonymously.</p>
+    </header>
 
-  <!-- Analytics & Recent -->
-  <section class="analytics">
-    <div class="chart">
-      <h3>Screening Trends (Bar Chart)</h3>
-      <div class="bar-chart">
-        <div class="bar">Stress</div>
-        <div class="bar">Anxiety</div>
-        <div class="bar">Depression</div>
-        <div class="bar">General</div>
+    <section class="admin-dashboard-grid">
+      <!-- Card 1 -->
+      <div class="admin-dashboard-card">
+        <h3>% High Anxiety (Screening)</h3>
+        <p class="admin-dashboard-stat">32%</p>
+        <p class="admin-dashboard-meta">Last 30 days</p>
       </div>
-    </div>
-    <div class="chart">
-      <h3>Anonymous Posting Ratio (Pie)</h3>
-      <div class="pie"></div>
-      <div class="pie-labels">
-        <p><span style="color:#1565c0;">■</span> Anonymous (40%)</p>
-        <p><span style="color:#42a5f5;">■</span> With Name (30%)</p>
-        <p><span style="color:#90caf9;">■</span> Moderated (30%)</p>
+
+      <!-- Card 2 -->
+      <div class="admin-dashboard-card">
+        <h3>Active Forum Posts</h3>
+        <p class="admin-dashboard-stat">89</p>
+        <p class="admin-dashboard-meta">Ongoing discussions</p>
       </div>
-    </div>
-  </section>
 
-  <!-- Recent Activities -->
-  <section class="recent" style="max-width:1000px; margin:30px auto;">
-    <h3>Recent Activities</h3>
-    <ul>
-      <li>✔ 5 new appointments booked today</li>
-      <li>✔ 3 anonymous posts created in Peer Support Forum</li>
-      <li>✔ Screening form submissions increased by 12%</li>
-      <li>✔ Counsellor dashboard updated with latest data</li>
-    </ul>
-  </section>
+      <!-- Card 3 -->
+      <div class="admin-dashboard-card">
+        <h3>Appointments Booked</h3>
+        <p class="admin-dashboard-stat">245</p>
+        <p class="admin-dashboard-meta">This semester</p>
+      </div>
 
-  <footer>
-    <p>&copy; 2025 Mental Health Project | Admin Analytics</p>
-  </footer>
+      <!-- Card 4 -->
+      <div class="admin-dashboard-card">
+        <h3>Completed Sessions</h3>
+        <p class="admin-dashboard-stat">150</p>
+        <p class="admin-dashboard-meta">With counsellors</p>
+      </div>
+    </section>
+
+    <section class="admin-dashboard-actions">
+      <button class="admin-dashboard-btn">Manage Counsellors</button>
+      <button class="admin-dashboard-btn">Manage Resources</button>
+      <button class="admin-dashboard-btn">View Reports</button>
+    </section>
+  </div>
+
 </body>
 </html>
+
 

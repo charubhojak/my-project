@@ -4,63 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Appointments</title>
-  <link rel="stylesheet" href="screening.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="header">
-    <h1>My Appointments</h1>
-    <p style="text-align: center;">View and manage your booked sessions</p>
-  </header>
 
-  <main class="container">
-    <div class="appointments-container">
-      
-      <!-- Appointment 1 -->
-      <div class="appointment-card">
-        <h3>Dr. Aisha Khan</h3>
-        <div class="appointment-details">
-          <p><strong>Date:</strong> 20 Sept 2025</p>
-          <p><strong>Time:</strong> 10:30 AM</p>
-          <p><strong>Notes:</strong> Discuss stress management</p>
-        </div>
-        <div class="appointment-actions">
-          <button class="btn-small btn-edit">Edit</button>
-          <button class="btn-small btn-cancel">Cancel</button>
-        </div>
+  <div class="my-appointments-page">
+    <header class="my-appointments-header">
+      <h1>| My Appointments</h1>
+      <p class="my-appointments-intro">Here you can view and manage your scheduled counselling sessions.</p>
+    </header>
+
+    <section class="my-appointments-list">
+      <!-- Appointment Card 1 -->
+      <div class="my-appointment-card">
+        <h3>Session with Dr. Neha Sharma</h3>
+        <p><strong>Date:</strong> 20th Sept 2025</p>
+        <p><strong>Time:</strong> 10:00 AM</p>
+        <p><strong>Status:</strong> Confirmed ✅</p>
+        <button class="my-appointment-cancel-btn">Cancel Appointment</button>
       </div>
 
-      <!-- Appointment 2 -->
-      <div class="appointment-card">
-        <h3>Mr. Rohan Sharma</h3>
-        <div class="appointment-details">
-          <p><strong>Date:</strong> 22 Sept 2025</p>
-          <p><strong>Time:</strong> 3:00 PM</p>
-          <p><strong>Notes:</strong> Follow-up session</p>
-        </div>
-        <div class="appointment-actions">
-          <button class="btn-small btn-edit">Edit</button>
-          <button class="btn-small btn-cancel">Cancel</button>
-        </div>
+      <!-- Appointment Card 2 -->
+      <div class="my-appointment-card">
+        <h3>Session with Mr. Raj Singh</h3>
+        <p><strong>Date:</strong> 25th Sept 2025</p>
+        <p><strong>Time:</strong> 3:00 PM</p>
+        <p><strong>Status:</strong> Pending ⏳</p>
+        <button class="my-appointment-cancel-btn">Cancel Appointment</button>
       </div>
 
-      <!-- Appointment 3 -->
-      <div class="appointment-card">
-        <h3>Ms. Neha Mehta</h3>
-        <div class="appointment-details">
-          <p><strong>Date:</strong> 25 Sept 2025</p>
-          <p><strong>Time:</strong> 5:15 PM</p>
-          <p><strong>Notes:</strong> Anxiety screening follow-up</p>
-        </div>
-        <div class="appointment-actions">
-          <button class="btn-small btn-edit">Edit</button>
-          <button class="btn-small btn-cancel">Cancel</button>
-        </div>
+      <!-- Appointment Card 3 -->
+      <div class="my-appointment-card">
+        <h3>Session with Ms. Aarti Verma</h3>
+        <p><strong>Date:</strong> 30th Sept 2025</p>
+        <p><strong>Time:</strong> 12:30 PM</p>
+        <p><strong>Status:</strong> Completed ✔</p>
+        <button class="my-appointment-cancel-btn">Rebook</button>
       </div>
+    </section>
+  </div>
 
-    </div>
-  </main>
-
-  
 </body>
 </html>
 

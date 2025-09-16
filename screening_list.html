@@ -1,40 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Screening Tests</title>
-    <link rel="stylesheet" href="screening.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screening List</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="head-sc">
-        <h1>Mental Health Screenings</h1>
-        <p>Select a screening test to begin</p>
+
+  <div class="screening-list-page">
+    <header class="screening-list-header">
+      <h1>Mental Health Screening</h1>
+      <p class="screening-list-intro">
+        Select a screening test below to begin your assessment.
+      </p>
     </header>
 
-    <main class="PGG">
-        <div class="card-container">
-            <a href="#" class="card">
-                <h2>PHQ-9</h2>
-                <p>Depression Screening Questionnaire</p>
-            </a>
+    <div class="screening-list-container">
+      <div class="screening-card">
+        <h2>PHQ-9</h2>
+        <p>Depression screening questionnaire</p>
+        <a href="screening_form.html?test=phq9" class="screening-btn">Start Test</a>
+      </div>
 
-            <a href="#" class="card">
-                <h2>GAD-7</h2>
-                <p>Anxiety Screening Questionnaire</p>
-            </a>
+      <div class="screening-card">
+        <h2>GAD-7</h2>
+        <p>Anxiety screening questionnaire</p>
+        <a href="screening_form.html?test=gad7" class="screening-btn">Start Test</a>
+      </div>
 
-            <a href="#" class="card">
-                <h2>GHQ</h2>
-                <p>General Health Questionnaire</p>
-            </a>
-        </div>
-    </main>
+      <div class="screening-card">
+        <h2>GHQ</h2>
+        <p>General Health Questionnaire</p>
+        <a href="screening_form.html?test=ghq" class="screening-btn">Start Test</a>
+      </div>
+    </div>
+  </div>
 
-    <footer class="footer">
-        <p>&copy; 2025 Mental Health Project</p>
-    </footer>
-
-  
 </body>
 </html>
+
+
+
+

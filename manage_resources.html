@@ -4,126 +4,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Manage Resources</title>
-  <link rel="stylesheet" href="screening.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>Manage Resources</header>
+  <div class="manage-resources-page">
+    <header class="manage-resources-header">
+      <h1>Manage Resources</h1>
+      <p class="manage-resources-intro">Add and manage helpful materials such as guides, articles, and videos for students.</p>
+    </header>
 
-  <div class="container">
-    <div class="content-wrapper">
-      
-      <!-- Left: Table -->
-      <div class="table-container">
-        <h2>Available Resources</h2>
-        <table id="resourceTable">
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Category</th>
-              <th>Link</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Coping with Anxiety</td>
-              <td>Article</td>
-              <td><a href="#" target="_blank">View</a></td>
-              <td>
-                <button class="btn btn-edit" onclick="editRow(this)">Edit</button>
-                <button class="btn btn-delete" onclick="deleteRow(this)">Delete</button>
-              </td>
-            </tr>
-            <tr>
-              <td>Relaxation Techniques</td>
-              <td>Video</td>
-              <td><a href="#" target="_blank">View</a></td>
-              <td>
-                <button class="btn btn-edit" onclick="editRow(this)">Edit</button>
-                <button class="btn btn-delete" onclick="deleteRow(this)">Delete</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <!-- Add Resource Form -->
+    <section class="manage-resources-form-section">
+      <h2>Add New Resource</h2>
+      <form class="manage-resources-form">
+        <input type="text" placeholder="Resource Title" required>
+        <input type="url" placeholder="Resource Link" required>
+        <select required>
+          <option value="">Select Type</option>
+          <option value="article">Article</option>
+          <option value="video">Video</option>
+          <option value="document">Document</option>
+        </select>
+        <textarea placeholder="Short Description" rows="3"></textarea>
+        <button type="submit">Add Resource</button>
+      </form>
+    </section>
 
-      <!-- Right: Form -->
-      <div class="form-container">
-        <h2>Add / Update Resource</h2>
-        <div class="form-group">
-          <label for="title">Resource Title</label>
-          <input type="text" id="title">
-        </div>
-        <div class="form-group">
-          <label for="category">Category</label>
-          <select id="category">
-            <option value="Article">Article</option>
-            <option value="Video">Video</option>
-            <option value="Guide">Guide</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="link">Resource Link</label>
-          <input type="url" id="link">
-        </div>
-        <button class="btn btn-add" onclick="addResource()">Save Resource</button>
-      </div>
-
-    </div>
-  </div>
-
-  <script>
-    let editIndex = null;
-
-    function addResource() {
-      const title = document.getElementById('title').value;
-      const category = document.getElementById('category').value;
-      const link = document.getElementById('link').value;
-      const table = document.getElementById('resourceTable').getElementsByTagName('tbody')[0];
-
-      if (title && category && link) {
-        if (editIndex === null) {
-          let row = table.insertRow();
-          row.innerHTML = `
-            <td>${title}</td>
-            <td>${category}</td>
-            <td><a href="${link}" target="_blank">View</a></td>
+    <!-- Resource List -->
+    <section class="manage-resources-list-section">
+      <h2>Available Resources</h2>
+      <table class="manage-resources-table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Type</th>
+            <th>Link</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mental Health Guide</td>
+            <td>Article</td>
+            <td><a href="#">Read More</a></td>
             <td>
-              <button class="btn btn-edit" onclick="editRow(this)">Edit</button>
-              <button class="btn btn-delete" onclick="deleteRow(this)">Delete</button>
+              <button class="manage-resources-btn edit">Edit</button>
+              <button class="manage-resources-btn delete">Delete</button>
             </td>
-          `;
-        } else {
-          table.rows[editIndex].cells[0].innerText = title;
-          table.rows[editIndex].cells[1].innerText = category;
-          table.rows[editIndex].cells[2].innerHTML = <a href="${link}" target="_blank">View</a>;
-          editIndex = null;
-        }
-
-        document.getElementById('title').value = "";
-        document.getElementById('category').value = "Article";
-        document.getElementById('link').value = "";
-      } else {
-        alert("Please fill all fields.");
-      }
-    }
-
-    function editRow(btn) {
-      const row = btn.parentNode.parentNode;
-      editIndex = row.rowIndex - 1;
-      document.getElementById('title').value = row.cells[0].innerText;
-      document.getElementById('category').value = row.cells[1].innerText;
-      document.getElementById('link').value = row.cells[2].querySelector("a").getAttribute("href");
-    }
-
-    function deleteRow(btn) {
-      const row = btn.parentNode.parentNode;
-      row.parentNode.removeChild(row);
-    }
-  </script>
+          </tr>
+          <tr>
+            <td>Stress Relief Video</td>
+            <td>Video</td>
+            <td><a href="#">Watch</a></td>
+            <td>
+              <button class="manage-resources-btn edit">Edit</button>
+              <button class="manage-resources-btn delete">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
 
 </body>
 </html>
+
 
 

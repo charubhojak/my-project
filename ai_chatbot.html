@@ -3,73 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI-Guided Chat Support</title>
-  <link rel="stylesheet" href="screening.css">
+  <title>AI-Guided Mental Health Chat</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="chat-container">
-    <header>AI-Guided Chat Support</header>
+  <div class="ai-chat-page">
+    <header class="ai-chat-header">
+      <h1>AI-Guided Mental Health Bot</h1>
+      <p class="ai-chat-intro">Ask questions, get guidance, and escalate to a counsellor if needed.</p>
+    </header>
 
-    <div class="chat-box" id="chatBox">
-      <div class="msg bot">Hello 👋 I'm here to support you. How are you feeling today?</div>
-    </div>
+    <!-- Chat Box -->
+    <section class="ai-chat-box">
+      <div class="ai-chat-messages" id="aiChatMessages">
+        <div class="ai-chat-message bot">
+          Hello! I’m here to support you. How are you feeling today?
+        </div>
+      </div>
 
-    <div class="chat-input">
-      <input type="text" id="userInput" placeholder="Type your message...">
-      <button onclick="sendMessage()">Send</button>
-    </div>
+      <div class="ai-chat-input">
+        <input type="text" id="aiChatInput" placeholder="Type your message...">
+        <button id="aiChatSendBtn">Send</button>
+      </div>
+    </section>
 
-    <div class="escalate">
-      <button onclick="escalate()">🔗 Escalate to Counsellor</button>
-    </div>
+    <!-- Escalate Button -->
+    <section class="ai-chat-escalate">
+      <button class="ai-chat-escalate-btn">Connect with Counsellor</button>
+    </section>
   </div>
 
   <script>
-    const chatBox = document.getElementById("chatBox");
+    const aiChatMessages = document.getElementById('aiChatMessages');
+    const aiChatInput = document.getElementById('aiChatInput');
+    const aiChatSendBtn = document.getElementById('aiChatSendBtn');
 
-    function sendMessage() {
-      const input = document.getElementById("userInput");
-      const message = input.value.trim();
-      if (!message) return;
+    aiChatSendBtn.addEventListener('click', () => {
+      const msg = aiChatInput.value.trim();
+      if(msg !== ''){
+        // User message
+        const userMsg = document.createElement('div');
+        userMsg.classList.add('ai-chat-message', 'user');
+        userMsg.textContent = msg;
+        aiChatMessages.appendChild(userMsg);
 
-      // User message
-      const userMsg = document.createElement("div");
-      userMsg.className = "msg user";
-      userMsg.innerText = message;
-      chatBox.appendChild(userMsg);
+        // Bot reply (mock)
+        const botMsg = document.createElement('div');
+        botMsg.classList.add('ai-chat-message', 'bot');
+        botMsg.textContent = "Thanks for sharing! I'm here to listen. 😊";
+        aiChatMessages.appendChild(botMsg);
 
-      // Auto scroll
-      chatBox.scrollTop = chatBox.scrollHeight;
-
-      // Bot reply (mock for now)
-      setTimeout(() => {
-        const botMsg = document.createElement("div");
-        botMsg.className = "msg bot";
-
-        // Simple mock Q/A
-        if (message.toLowerCase().includes("sad")) {
-          botMsg.innerText = "I'm sorry to hear that. 💙 Would you like some coping techniques?";
-        } else if (message.toLowerCase().includes("anxious")) {
-          botMsg.innerText = "It’s okay, anxiety can be tough. Try slow breathing: inhale 4s, hold 4s, exhale 4s.";
-        } else {
-          botMsg.innerText = "Thank you for sharing. I'm here to listen. 💡 You can also escalate to a counsellor anytime.";
-        }
-
-        chatBox.appendChild(botMsg);
-        chatBox.scrollTop = chatBox.scrollHeight;
-      }, 800);
-
-      input.value = "";
-    }
-
-    function escalate() {
-      const botMsg = document.createElement("div");
-      botMsg.className = "msg bot";
-      botMsg.innerText = "🔗 Connecting you to a counsellor... Please wait.";
-      chatBox.appendChild(botMsg);
-      chatBox.scrollTop = chatBox.scrollHeight;
-    }
+        aiChatInput.value = '';
+        aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+      }
+    });
   </script>
 
 </body>

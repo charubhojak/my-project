@@ -3,34 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="screening.css">
+  <title>Screening Result</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="header">
-        <h1>PHQ-9 Result</h1>
-        <p>Your mental health assessment summary</p>
+
+  <div class="screening-result-page">
+    <header class="screening-result-header">
+      <h1>Your Screening Result</h1>
+      <p class="screening-result-intro">Based on your responses, here is your score and risk level.</p>
     </header>
 
-    <main class="container">
-        <div class="result-card">
-            <h2>Total Score</h2>
-            <div class="score">14</div>
+    <div class="screening-result-card">
+      <div class="screening-result-score">
+        <h2>Total Score</h2>
+        <p id="resultScore" class="screening-result-value">--</p>
+      </div>
+      <div class="screening-result-category">
+        <h2>Risk Level</h2>
+        <p id="resultLevel" class="screening-result-level">--</p>
+      </div>
+    </div>
 
-            <p>Based on your responses, your risk level is:</p>
-            <div class="risk-level moderate">Moderate Depression</div>
+    <div class="screening-result-actions">
+      <a href="screening_form.html" class="screening-result-btn">Retake Test</a>
+      <a href="appointment_form.html" class="screening-result-btn highlight">Book Appointment</a>
+    </div>
+  </div>
 
-            <p class="advice">
-                It's recommended to consult a mental health professional for guidance and support.
-            </p>
+  <script>
+    // Demo: score from localStorage (set after form submit)
+    const score = localStorage.getItem("screeningScore") || null;
+    const scoreBox = document.getElementById("resultScore");
+    const levelBox = document.getElementById("resultLevel");
 
-            <a href="screening_list.html" class="btn-back">Back to Screening List</a>
-        </div>
-    </main>
+    if (score !== null) {
+      const total = parseInt(score);
+      scoreBox.textContent = ${total};
 
-    <footer class="footer">
-        <p>&copy; 2025 Mental Health Project</p>
-    </footer>
+      let level = "";
+      if (total <= 4) {
+        level = "Low";
+        levelBox.className = "screening-result-level low";
+      } else if (total <= 9) {
+        level = "Moderate";
+        levelBox.className = "screening-result-level moderate";
+      } else {
+        level = "High";
+        levelBox.className = "screening-result-level high";
+      }
+      levelBox.textContent = level;
+    } else {
+      scoreBox.textContent = "No score yet";
+      levelBox.textContent = "Not available";
+    }
+  </script>
 
 </body>
 </html>
+
+

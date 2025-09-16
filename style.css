@@ -1,0 +1,1207 @@
+/* ----- Screening List Page ----- */
+.screening-list-page {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f8fb;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+}
+
+.screening-list-header h1 {
+  font-size: 2rem;
+  color: #505081;
+  margin-bottom: 10px;
+  animation: fadeInDown 0.6s ease;
+}
+
+.screening-list-intro {
+  color: #666;
+  margin-bottom: 30px;
+  animation: fadeIn 1s ease;
+}
+
+.screening-list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.screening-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.6s ease;
+}
+
+.screening-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.screening-card h2 {
+  color: #8686AC;
+  margin-bottom: 10px;
+}
+
+.screening-card p {
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.screening-btn {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #505081;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.screening-btn:hover {
+  background: #8686AC;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+
+
+/* ----- Screening Form Page ----- */
+.screening-form-page {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f8fb;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.screening-form-header h1 {
+  font-size: 2rem;
+  color: #505081;
+  margin-bottom: 10px;
+  animation: fadeInDown 0.6s ease;
+}
+
+.screening-form-intro {
+  color: #666;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease;
+}
+
+.screening-form-container {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 600px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.screening-form-question {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.screening-form-question label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #505081;
+}
+
+.screening-form-question select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.screening-form-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #505081;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.screening-form-btn:hover {
+  background: #8686AC;
+}
+
+.screening-form-select {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.screening-form-select label {
+  font-weight: 600;
+  margin-right: 10px;
+  color: #505081;
+}
+
+.screening-form-select select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+
+
+
+/* ----- Screening Result Page ----- */
+.screening-result-page {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f8fb;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.screening-result-header h1 {
+  font-size: 2rem;
+  color: #505081;
+  margin-bottom: 10px;
+  animation: fadeInDown 0.6s ease;
+}
+
+.screening-result-intro {
+  color: #666;
+  margin-bottom: 25px;
+  animation: fadeIn 1s ease;
+}
+
+.screening-result-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 30px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.screening-result-score,
+.screening-result-category {
+  flex: 1 1 200px;
+}
+
+.screening-result-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #505081;
+  margin-top: 10px;
+}
+
+.screening-result-level {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.screening-result-level.low {
+  color: green;
+}
+.screening-result-level.moderate {
+  color: orange;
+}
+.screening-result-level.high {
+  color: red;
+}
+
+.screening-result-actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.screening-result-btn {
+  padding: 12px 20px;
+  background: #505081;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.screening-result-btn:hover {
+  background: #8686AC;
+}
+
+.screening-result-btn.highlight {
+  background: #1ABC9C;
+}
+
+.screening-result-btn.highlight:hover {
+  background: #16a085;
+}
+
+
+
+
+
+/* ----- Appointment Form Page ----- */
+.appointment-form-page {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f8fb;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.appointment-form-header h1 {
+  font-size: 2rem;
+  color: #505081;
+  margin-bottom: 10px;
+  animation: fadeInDown 0.6s ease;
+}
+
+.appointment-form-intro {
+  color: #666;
+  margin-bottom: 20px;
+  text-align: center;
+  max-width: 600px;
+  animation: fadeIn 1s ease;
+}
+
+.appointment-form-container {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 600px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.appointment-form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.appointment-form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #505081;
+}
+
+.appointment-form-group input,
+.appointment-form-group select,
+.appointment-form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.appointment-form-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #505081;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.appointment-form-btn:hover {
+  background: #8686AC;
+}
+
+
+
+
+
+
+/* ----- My Appointments Page ----- */
+.my-appointments-page {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f8fb;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.my-appointments-header h1 {
+  font-size: 2rem;
+  color: #505081;
+  margin-bottom: 10px;
+  animation: fadeInDown 0.6s ease;
+}
+
+.my-appointments-intro {
+  color: #666;
+  margin-bottom: 25px;
+  text-align: center;
+  max-width: 600px;
+}
+
+.my-appointments-list {
+  display: grid;
+  gap: 20px;
+  width: 100%;
+  max-width: 700px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.my-appointment-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.my-appointment-card:hover {
+  transform: translateY(-5px);
+}
+
+.my-appointment-card h3 {
+  color: #505081;
+  margin-bottom: 10px;
+}
+
+.my-appointment-cancel-btn {
+  margin-top: 12px;
+  padding: 10px 15px;
+  background: #505081;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s;
+}
+
+.my-appointment-cancel-btn:hover {
+  background: #8686AC;
+}
+
+
+
+
+
+
+
+
+/* ----- Appointment List Page ----- */
+.appointment-list-page {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f8fb;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.appointment-list-header h1 {
+  font-size: 2rem;
+  color: #505081;
+  margin-bottom: 10px;
+  animation: fadeInDown 0.6s ease;
+}
+
+.appointment-list-intro {
+  color: #666;
+  margin-bottom: 25px;
+  text-align: center;
+  max-width: 600px;
+}
+
+.appointment-list-container {
+  display: grid;
+  gap: 20px;
+  width: 100%;
+  max-width: 700px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.appointment-list-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.appointment-list-card:hover {
+  transform: translateY(-5px);
+}
+
+.appointment-list-card h3 {
+  color: #505081;
+  margin-bottom: 10px;
+}
+
+.appointment-list-btn {
+  margin-top: 12px;
+  padding: 10px 15px;
+  background: #505081;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s;
+}
+
+.appointment-list-btn:hover {
+  background: #8686AC;
+}
+
+
+
+
+
+
+
+/* ----- Forum List Page ----- */
+.forum-list-page {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f8fb;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.forum-list-header h1 {
+  font-size: 2rem;
+  color: #505081;
+  margin-bottom: 10px;
+  animation: fadeInDown 0.6s ease;
+}
+
+.forum-list-intro {
+  color: #666;
+  margin-bottom: 25px;
+  text-align: center;
+  max-width: 600px;
+}
+
+.forum-list-container {
+  display: grid;
+  gap: 20px;
+  width: 100%;
+  max-width: 700px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.forum-list-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.forum-list-card:hover {
+  transform: translateY(-5px);
+}
+
+.forum-list-card h3 {
+  color: #505081;
+  margin-bottom: 10px;
+}
+
+.forum-list-meta {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.forum-list-btn {
+  padding: 10px 15px;
+  background: #505081;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s;
+}
+
+.forum-list-btn:hover {
+  background: #8686AC;
+}
+
+
+
+
+
+
+
+
+
+/* ----- Forum Details Page ----- */
+.forum-details-page {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f8fb;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.forum-details-header h1 {
+  font-size: 1.8rem;
+  color: #505081;
+  margin-bottom: 5px;
+  animation: fadeInDown 0.6s ease;
+}
+
+.forum-details-meta {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.forum-details-main-post {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+  max-width: 700px;
+  width: 100%;
+}
+
+.forum-details-comments {
+  max-width: 700px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.forum-details-comments h2 {
+  color: #505081;
+  margin-bottom: 15px;
+}
+
+.forum-details-comment {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.forum-details-comment:hover {
+  transform: translateX(5px);
+}
+
+.forum-details-add-comment {
+  max-width: 700px;
+  width: 100%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.forum-details-add-comment h3 {
+  color: #505081;
+  margin-bottom: 10px;
+}
+
+.forum-details-add-comment textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.forum-details-btn {
+  padding: 10px 15px;
+  background: #505081;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s;
+}
+
+.forum-details-btn:hover {
+  background: #8686AC;
+}
+
+
+
+
+
+
+
+
+
+
+/* ----- Forum Post Page ----- */
+.forum-post-page {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f8fb;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.forum-post-header h1 {
+  font-size: 1.8rem;
+  color: #505081;
+  margin-bottom: 10px;
+  animation: fadeInDown 0.6s ease;
+  text-align: center;
+}
+
+.forum-post-intro {
+  color: #666;
+  margin-bottom: 25px;
+  text-align: center;
+  max-width: 600px;
+}
+
+.forum-post-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 700px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.forum-post-form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+  color: #505081;
+}
+
+.forum-post-form input[type="text"],
+.forum-post-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.forum-post-anonymous {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.forum-post-anonymous input {
+  margin-right: 8px;
+}
+
+.forum-post-btn {
+  padding: 12px 20px;
+  background: #505081;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s;
+}
+
+.forum-post-btn:hover {
+  background: #8686AC;
+}
+
+
+
+
+
+
+
+/* ----- Admin Dashboard Page ----- */
+.admin-dashboard-page {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f8fb;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.admin-dashboard-header h1 {
+  font-size: 2rem;
+  color: #505081;
+  margin-bottom: 10px;
+  animation: fadeInDown 0.6s ease;
+  text-align: center;
+}
+
+.admin-dashboard-intro {
+  color: #666;
+  margin-bottom: 30px;
+  text-align: center;
+  max-width: 600px;
+}
+
+.admin-dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 30px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.admin-dashboard-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.admin-dashboard-card:hover {
+  transform: translateY(-5px);
+}
+
+.admin-dashboard-card h3 {
+  color: #505081;
+  margin-bottom: 10px;
+}
+
+.admin-dashboard-stat {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1ABC9C;
+  margin-bottom: 5px;
+}
+
+.admin-dashboard-meta {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.admin-dashboard-actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.admin-dashboard-btn {
+  padding: 12px 20px;
+  background: #505081;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s;
+}
+
+.admin-dashboard-btn:hover {
+  background: #8686AC;
+}
+
+
+
+
+
+
+
+
+/* ----- Manage Counsellors Page ----- */
+.manage-counsellors-page {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f8fb;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.manage-counsellors-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.manage-counsellors-header h1 {
+  color: #505081;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  animation: fadeInDown 0.6s ease;
+}
+
+.manage-counsellors-intro {
+  color: #666;
+  max-width: 600px;
+  margin: auto;
+}
+
+.manage-counsellors-form-section,
+.manage-counsellors-list-section {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 25px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.manage-counsellors-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.manage-counsellors-form input {
+  flex: 1 1 250px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.manage-counsellors-form button {
+  background: #505081;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.manage-counsellors-form button:hover {
+  background: #8686AC;
+}
+
+.manage-counsellors-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.manage-counsellors-table th,
+.manage-counsellors-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.manage-counsellors-table th {
+  background: #505081;
+  color: #fff;
+}
+
+.manage-counsellors-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-right: 5px;
+}
+
+.manage-counsellors-btn.edit {
+  background: #1ABC9C;
+  color: #fff;
+}
+
+.manage-counsellors-btn.delete {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.manage-counsellors-btn:hover {
+  opacity: 0.9;
+}
+
+
+
+
+
+
+
+
+
+/* ----- Manage Resources Page ----- */
+.manage-resources-page {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f8fb;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.manage-resources-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.manage-resources-header h1 {
+  color: #505081;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  animation: fadeInDown 0.6s ease;
+}
+
+.manage-resources-intro {
+  color: #666;
+  max-width: 600px;
+  margin: auto;
+}
+
+.manage-resources-form-section,
+.manage-resources-list-section {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 25px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.manage-resources-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.manage-resources-form input,
+.manage-resources-form select,
+.manage-resources-form textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.manage-resources-form button {
+  background: #505081;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.manage-resources-form button:hover {
+  background: #8686AC;
+}
+
+.manage-resources-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.manage-resources-table th,
+.manage-resources-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.manage-resources-table th {
+  background: #505081;
+  color: #fff;
+}
+
+.manage-resources-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-right: 5px;
+}
+
+.manage-resources-btn.edit {
+  background: #1ABC9C;
+  color: #fff;
+}
+
+.manage-resources-btn.delete {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.manage-resources-btn:hover {
+  opacity: 0.9;
+}
+
+
+
+
+
+
+
+
+/* ----- AI-Guided Chat Support ----- */
+.ai-chat-page {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f8fb;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ai-chat-header h1 {
+  color: #505081;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  animation: fadeInDown 0.6s ease;
+}
+
+.ai-chat-intro {
+  color: #666;
+  margin-bottom: 25px;
+  text-align: center;
+  max-width: 600px;
+}
+
+.ai-chat-box {
+  background: #fff;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  overflow: hidden;
+  animation: fadeInUp 0.6s ease;
+}
+
+.ai-chat-messages {
+  padding: 15px;
+  height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ai-chat-message {
+  padding: 10px 15px;
+  border-radius: 12px;
+  max-width: 80%;
+}
+
+.ai-chat-message.bot {
+  background: #505081;
+  color: #fff;
+  align-self: flex-start;
+}
+
+.ai-chat-message.user {
+  background: #1ABC9C;
+  color: #fff;
+  align-self: flex-end;
+}
+
+.ai-chat-input {
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+
+.ai-chat-input input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  font-size: 1rem;
+}
+
+.ai-chat-input button {
+  background: #505081;
+  color: #fff;
+  border: none;
+  padding: 0 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.ai-chat-input button:hover {
+  background: #8686AC;
+}
+
+.ai-chat-escalate {
+  text-align: center;
+}
+
+.ai-chat-escalate-btn {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.ai-chat-escalate-btn:hover {
+  background: #c0392b;
+}
+
+
